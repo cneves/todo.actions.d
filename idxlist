@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+import sys
+
+if sys.argv[1] == 'usage':
+  print """  idxlist:
+    idxlist
+      lists tasks by [idx]
+"""
+else:
+  from todobase import listidx
+  
+  if __name__ == '__main__':
+    lines = listidx(sys.argv[2:])
+    lines.sort()
+    print '\n'.join([str(x) for x in lines])

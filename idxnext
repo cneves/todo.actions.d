@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+import sys
+
+if sys.argv[1] == 'usage':
+  print """  idxnext:
+    idxnext
+      returns the next [idx] for the context passed (or globally if none)
+"""
+else:
+  from todobase import findnextidx
+
+  if __name__ == '__main__':
+    print findnextidx(sys.argv[2:])

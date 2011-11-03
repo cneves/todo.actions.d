@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+import sys
+
+if sys.argv[1] == 'usage':
+  print """  idxlistall:
+    idxlistall
+      lists all tasks (including closed) by [idx]
+"""
+else:
+  from todobase import listidx
+  
+  if __name__ == '__main__':
+    lines = listidx(sys.argv[2:], lsall=True)
+    lines.sort()
+    print '\n'.join([str(x) for x in lines])
+
